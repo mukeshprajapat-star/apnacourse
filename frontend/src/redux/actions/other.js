@@ -5,7 +5,7 @@ export const contactUs = (name, email, message) => async dispatch => {
   try {
     const config = {
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       withCredentials: true,
     };
@@ -31,7 +31,7 @@ export const courseRequest = (name, email, course) => async dispatch => {
   try {
     const config = {
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       withCredentials: true,
     };

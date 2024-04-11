@@ -5,7 +5,7 @@ export const createCourse = formData => async dispatch => {
   try {
     const config = {
       headers: {
-        'Content-type': 'multipart/form-data',
+        'Content-Type': 'multipart/form-data',
       },
       withCredentials: true,
     };
