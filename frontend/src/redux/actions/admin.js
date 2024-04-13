@@ -1,4 +1,3 @@
-import { server } from '../store';
 import axios from 'axios';
 
 export const createCourse = formData => async dispatch => {
