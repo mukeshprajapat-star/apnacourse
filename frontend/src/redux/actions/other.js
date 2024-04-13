@@ -13,7 +13,7 @@ export const contactUs = (name, email, message) => async dispatch => {
     dispatch({ type: 'contactRequest' });
 
     const { data } = await axios.post(
-      `${server}/contact`,
+      `/api/v1/contact`,
       { name, email, message },
       config
     );
@@ -39,7 +39,7 @@ export const courseRequest = (name, email, course) => async dispatch => {
     dispatch({ type: 'courseRequestRequest' });
 
     const { data } = await axios.post(
-      `${server}/courserequest`,
+      `/api/v1/courserequest`,
       { name, email, course },
       config
     );

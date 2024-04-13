@@ -6,7 +6,7 @@ export const login = (email, password) => async dispatch => {
     dispatch({ type: 'loginRequest' });
 
     const { data } = await axios.post(
-      `${server}/login`,
+      `/api/v1/login`,
       { email, password },
       {
         headers: {
@@ -27,7 +27,7 @@ export const register = formdata => async dispatch => {
   try {
     dispatch({ type: 'registerRequest' });
 
-    const { data } = await axios.post(`${server}/register`, formdata, {
+    const { data } = await axios.post(`/api/v1/register`, formdata, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -46,7 +46,7 @@ export const loadUser = () => async dispatch => {
     dispatch({ type: 'loadUserRequest' });
 
     const { data } = await axios.get(
-      `${server}/me`,
+      `/api/v1/me`,
 
       {
         withCredentials: true,
@@ -62,7 +62,7 @@ export const logout = () => async dispatch => {
   try {
     dispatch({ type: 'logoutRequest' });
 
-    const { data } = await axios.get(`${server}/logout`, {
+    const { data } = await axios.get(`/api/v1/logout`, {
       withCredentials: true,
     });
     dispatch({ type: 'logoutSuccess', payload: data.message });
@@ -75,7 +75,7 @@ export const buySubscription = () => async dispatch => {
   try {
     dispatch({ type: 'buySubscriptionRequest' });
 
-    const { data } = await axios.get(`${server}/subscribe`, {
+    const { data } = await axios.get(`/api/v1/subscribe`, {
       withCredentials: true,
     });
 
@@ -92,7 +92,7 @@ export const cancelSubscription = () => async dispatch => {
   try {
     dispatch({ type: 'cancelSubscriptionRequest' });
 
-    const { data } = await axios.delete(`${server}/subscribe/cancel`, {
+    const { data } = await axios.delete(`/api/v1/subscribe/cancel`, {
       withCredentials: true,
     });
 

@@ -6,7 +6,7 @@ export const updateProfile = (name, email) => async dispatch => {
     dispatch({ type: 'updateProfileRequest' });
 
     const { data } = await axios.put(
-      `${server}/updateprofile`,
+      `/api/v1/updateprofile`,
       {
         name,
         email,
@@ -34,7 +34,7 @@ export const updateProfilePicture = formdata => async dispatch => {
     dispatch({ type: 'updateProfilePictureRequest' });
 
     const { data } = await axios.put(
-      `${server}/updateprofilepicture`,
+      `/api/v1/updateprofilepicture`,
       formdata,
       {
         headers: {
@@ -59,7 +59,7 @@ export const changePassword = (oldPassword, newPassword) => async dispatch => {
     dispatch({ type: 'changePasswordRequest' });
 
     const { data } = await axios.put(
-      `${server}/changepassword`,
+      `/api/v1/changepassword`,
       {
         oldPassword,
         newPassword,
@@ -95,7 +95,7 @@ export const forgetPassword = email => async dispatch => {
     };
 
     const { data } = await axios.post(
-      `${server}/forgetpassword`,
+      `/api/v1/forgetpassword`,
       {
         email,
       },
@@ -123,7 +123,7 @@ export const resetPassword = (token, password) => async dispatch => {
     };
 
     const { data } = await axios.put(
-      `${server}/resetpassword/${token}`,
+      `/api/v1/resetpassword/${token}`,
       {
         password,
       },
@@ -152,7 +152,7 @@ export const addToPlaylist = id => async dispatch => {
     };
 
     const { data } = await axios.post(
-      `${server}/addtoplaylist`,
+      `/api/v1/addtoplaylist`,
       {
         id,
       },
@@ -177,7 +177,7 @@ export const removeFromPlaylist = id => async dispatch => {
     };
 
     const { data } = await axios.delete(
-      `${server}/removefromplaylist?id=${id}`,
+      `/api/v1/removefromplaylist?id=${id}`,
       config
     );
 
